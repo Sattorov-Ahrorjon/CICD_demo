@@ -54,13 +54,23 @@ jobs:
     
     needs: [deploy-run]
     steps:
-    - name: Open file list
-      run: pwd & ls -a
-    - name: Open venv file and Install requirements
-      run: |
-        source venv/bin/activate
-        pip freeze
-    - name: Run test file
-      run: pytest tests/tests.py::test_main_function
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.12.1'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python3 -m venv venv
+      - name: Open venv file and Install requirements
+        run: |
+          source venv/bin/activate
+          pip install -r requirements.txt
+          pwd & ls -a
+          source venv/bin/activate
+          pip freeze
+      - name: Run test file
+        run: pytest tests/tests.py::test_main_function
 
 
