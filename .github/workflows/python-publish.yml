@@ -52,6 +52,10 @@ jobs:
     
     needs: [deploy-run]
     steps:
+    - name: Open venv file and Install requirements
+      run: |
+        source venv/bin/activate
+        pip freeze
     - name: Run test file
       run: pytest tests/tests.py::test_main_function
 
