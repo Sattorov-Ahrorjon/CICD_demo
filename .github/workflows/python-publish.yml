@@ -40,8 +40,8 @@ jobs:
 
 #    - name: Build package
 #      run: python -m build
-    - name: Run FastAPI
-      run: uvicorn cicd_test.main:app --reload
+#    - name: Run FastAPI
+#      run: uvicorn cicd_test.main:app --reload
       
   test-jobs:
   
