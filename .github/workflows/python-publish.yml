@@ -35,11 +35,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build
-    - name: Install requirements
-      run: pip install -r requirements.txt
-    - name: Build package
-      run: python -m build
+        python3 -m venv venv
+    - name: Open venv file and Install requirements
+      run: |
+        source venv/bin/activate
+        pip install -r requirements.txt
+#    - name: Build package
+#      run: python -m build
     - name: Run FastAPI
       run: uvicorn cicd_test.main:app --reload
       
