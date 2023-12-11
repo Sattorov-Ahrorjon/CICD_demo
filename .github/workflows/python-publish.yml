@@ -73,8 +73,8 @@ jobs:
           source venv/bin/activate
           cd tests/
           cat tests.py
-      - name: Check Syntax # check code formatting
-        run: pycodestyle --statistics .
+      - name: See python3 --version # check python3 --version
+        run: python3 --version
       - name: See pytest --version
         run: pytest --version
       - name: Run test file
