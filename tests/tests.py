@@ -15,7 +15,18 @@ def get_my_id():
     assert response.json().get('pk') == 12
 
 
+def kvadrat():
+    response = service_test.get("/kvadrat/5")
+    assert response.json().get('number') == 25
+
+
+def kub():
+    response = service_test.get("/kub/3")
+    assert response.json().get('number') == 27
+
+
 def test_main_function():
     main_dev()
     get_my_id()
-
+    kvadrat()
+    kub()
