@@ -71,7 +71,8 @@ jobs:
         run: |
           pwd & ls -a
           source venv/bin/activate
-          cd tests & ls & cat tests.py
+          cd tests/
+          ls & cat tests.py
       - name: Run test file
         run: pytest tests/tests.py::test_main_function
 
