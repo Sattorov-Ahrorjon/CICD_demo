@@ -56,6 +56,7 @@ jobs:
     steps:
     - name: Open venv file and Install requirements
       run: |
+        pwd & ls -a
         source venv/bin/activate
         pip freeze
     - name: Run test file
