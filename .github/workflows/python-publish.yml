@@ -67,9 +67,11 @@ jobs:
         run: |
           source venv/bin/activate
           pip install -r requirements.txt
+      - name: See pwd line and tests.py
+        run: |
           pwd & ls -a
           source venv/bin/activate
-          pip freeze
+          cd tests & ls & cat tests.py
       - name: Run test file
         run: pytest tests/tests.py::test_main_function
 
