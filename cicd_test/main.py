@@ -12,3 +12,12 @@ async def main_dev():
 async def get_my_id(pk: int):
     return {"pk": pk}
 
+
+@app.get("/kvadrat/{number}")
+async def kvadrat(number: int):
+    return {'number': number ** 2}
+
+
+@app.get("/kub/{number}")
+async def kub(number: int):
+    return {'number': number ** 3}
