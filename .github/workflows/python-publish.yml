@@ -40,6 +40,7 @@ jobs:
       run: |
         source venv/bin/activate
         pip install -r requirements.txt
+        pwd & ls -a
 #    - name: Build package
 #      run: python -m build
     - name: Run FastAPI
