@@ -73,7 +73,10 @@ jobs:
           source venv/bin/activate
           cd tests/
           cat tests.py
+      - name: See pytest --version
+        run: pytest --version
       - name: Run test file
         run: pytest tests/tests.py::test_main_function
+#        run: pytest tests/tests.py::test_main_function
 
 
