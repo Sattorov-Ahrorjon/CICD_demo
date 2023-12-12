@@ -1,0 +1,20 @@
+
+name: Matrix create
+
+stages:
+- matrix
+
+Matrix:
+  stage: matrix
+  image: alpine:latest
+  parallel:
+    matrix:
+      - CLOUD:
+        - aws
+        - azure
+        - gcp
+        ARCH:
+        - kubernetes
+        - service-mesh
+  script:
+  - echo "Hello from $ARCH from $CLOUD"
