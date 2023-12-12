@@ -11,10 +11,10 @@ name: Upload Python Package
 on:
   release:
     branches:
-      - main
+      - master
 
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 
 
@@ -32,8 +32,19 @@ jobs:
     - name: Install dependencies
       run: python -m pip install --upgrade pip
 
+    - name: Create a Venv environment
+      run: python3 -m venv venv
+
+    - name: Open a Venv environment
+      run: source venv/bin/activate
+
     - name: Install requirements
       run: pip install -r requirements.txt
+
+    - name: View packages installed in a venv environment
+      run: |
+        ls
+        pip freeze
 
 #    - name: Build package
 #      run: python -m build
@@ -54,13 +65,24 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip
 
+      - name: Create a Venv environment
+        run: python3 -m venv venv
+
+      - name: Open a Venv environment
+        run: source venv/bin/activate
+
       - name: Install requirements
         run: pip install -r requirements.txt
+
+      - name: View packages installed in a venv environment
+        run: |
+          ls
+          pip freeze
 
       - name: See python3 --version # check python3 --version
         run: python3 --version
 
-      - name: See pytest --version
+      - name: See pytest --version # check pytest --version
         run: pytest --version
 
       - name: Run test file
