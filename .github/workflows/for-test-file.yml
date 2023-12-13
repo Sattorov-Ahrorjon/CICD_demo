@@ -21,7 +21,7 @@ jobs:
 #        os: [ubuntu-latest]
 #    runs-on: ${{ matrix.os }}
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name != 'push' }}
 
     steps:
       - uses: actions/checkout@v3
@@ -43,15 +43,17 @@ jobs:
 
       - name: Print action name
         run: echo "Hello ${{ github.event.action }}"
-        if: ${{ github.event_name != 'push' }}
+
       - name: run shell
         shell: python
         run: |
           print("Hello world")
           from uuid import uuid4
           print(f"UUID4 - {uuid4()}")
+
       - name: Print github object
         run: echo "GitHub - $github_obj"
+
       - name: Run GITHUB_STEP_SUMMARY
         run: echo "#### Hello github :rocket:" >> $GITHUB_STEP_SUMMARY
 
