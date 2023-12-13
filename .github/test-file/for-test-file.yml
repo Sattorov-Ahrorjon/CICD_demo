@@ -1,6 +1,11 @@
+name: Test yml file
 
 
 on:
+  release:
+    branches:
+      - master
+      - developer
   push:
     branches:
       - main
