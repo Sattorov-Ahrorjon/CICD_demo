@@ -10,7 +10,7 @@ on:
 
 jobs:
   job1:
-    runs-on: ubuntu-layout
+    runs-on: ubuntu-latest
 
     steps:
       - uses: action/checkout@v3
