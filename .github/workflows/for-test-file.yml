@@ -24,6 +24,9 @@ on:
 #    - master
 #    - developer
 
+env:
+  name: Diana
+
 jobs:
   job1:
     strategy:
@@ -39,4 +42,7 @@ jobs:
 
       - name: Step 1
         run: echo "The - $matrix.os"
+
+      - name: Hello friend
+        run: echo "Hello $name !"
 
