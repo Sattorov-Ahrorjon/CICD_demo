@@ -3,6 +3,10 @@ name: On workflow for test github
 
 
 on:
+  workflow_run:
+    workflows:
+      - Test yml file
+#  workflow_call:
   workflow_dispatch:
     inputs:
       defa:
