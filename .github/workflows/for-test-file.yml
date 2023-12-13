@@ -3,7 +3,7 @@ name: Test yml file
 
 on:
   push:
-    path:
+    paths:
       - '**test-github.yml'
 
 
