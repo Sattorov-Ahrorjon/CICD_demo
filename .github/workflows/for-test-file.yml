@@ -68,9 +68,8 @@ jobs:
         shell: python
         run: |
           import os
-          print(os.environ['PATH'])
-          print(os.environ)
-          print(os.__dirs__())
+          print("Print1 - ", os.environ['PATH'])
+          print("Print2 - ", os.environ)
           
 
 
