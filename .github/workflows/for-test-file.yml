@@ -1,7 +1,6 @@
 name: Test yml file
 
 
-
 on:
   schedule:
     - cron: '6 * * * *'
