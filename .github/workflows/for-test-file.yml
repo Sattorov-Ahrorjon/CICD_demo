@@ -5,7 +5,7 @@ name: Test yml file
 on:
   push:
     path:
-      - '**for-test-file.yml'
+      - '**for-test**'
 
 
 env:
