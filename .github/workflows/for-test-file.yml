@@ -29,10 +29,11 @@ env:
 
 jobs:
   job1:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+#    strategy:
+#      matrix:
+#        os: [ubuntu-latest]
+#    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -45,4 +46,7 @@ jobs:
 
       - name: Hello friend
         run: echo "Hello $name !"
+
+      - name: Print dev. name
+        run: echo "Hello ${{ github.event_name }}"
 
