@@ -9,9 +9,9 @@
 name: Upload Python Package
 
 on:
-#  release:
-#    branches:
-#      - master
+  release:
+    branches:
+      - master
 #
 #  push:
 #    branches: [ master ]
