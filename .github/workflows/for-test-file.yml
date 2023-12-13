@@ -6,17 +6,17 @@ on:
     branches:
       - master
       - developer
-  push:
-    branches:
-      - main
-      - master
-      - developer
-    path:
-      - '**for-test-file.yml'
-  pull-request:
-    - main
-    - master
-    - developer
+#  push:
+#    branches:
+#      - main
+#      - master
+#      - developer
+#    path:
+#      - '**for-test-file.yml'
+#  pull-request:
+#    - main
+#    - master
+#    - developer
 
 jobs:
   job1:
