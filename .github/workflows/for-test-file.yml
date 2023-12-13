@@ -64,4 +64,13 @@ jobs:
       - name: Run GITHUB_STEP_SUMMARY
         run: echo "#### Hello github :rocket:" >> $GITHUB_STEP_SUMMARY
 
+      - name: Echo path on python os
+        shell: python
+        run: |
+          import os
+          print(os.environ['PATH'])
+          print(os.environ)
+          print(os.__dirs__())
+          
+
 
