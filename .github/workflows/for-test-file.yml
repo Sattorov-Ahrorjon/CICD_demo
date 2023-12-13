@@ -31,7 +31,9 @@ jobs:
         run: echo "The - $matrix.os"
 
       - name: Hello friend
-        run: echo "Hello $name !"
+        run: |
+          echo "Hello $name !"
+          echo "Hello ${{ github.actor }} !"
 
       - name: Print event-name name
         run: echo "Hello ${{ github.event_name }}"
