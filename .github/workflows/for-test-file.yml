@@ -1,3 +1,4 @@
+
 name: Test yml file
 
 
@@ -11,6 +12,7 @@ on:
 
 env:
   name: Diana
+  github_obj: ${{ toJson(github) }}
 
 jobs:
   job1:
@@ -48,6 +50,8 @@ jobs:
           print("Hello world")
           from uuid import uuid4
           print(f"UUID4 - {uuid4()}")
+      - name: Print github object
+        run: echo "GitHub - $github_obj"
       - name: Run GITHUB_STEP_SUMMARY
         run: echo "#### Hello github :rocket:" >> $GITHUB_STEP_SUMMARY
 
