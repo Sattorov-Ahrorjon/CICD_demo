@@ -3,7 +3,7 @@ name: On workflow for test github
 
 
 on:
-  workflow_dispatch:
+  - workflow_dispatch
 #    inputs:
 #      defa:
 #        description: 'Defa descript'
