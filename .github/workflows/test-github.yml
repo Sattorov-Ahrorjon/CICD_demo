@@ -6,6 +6,7 @@ on:
     workflows: [ Test yml file ]
     types:
       - completed
+      - requested
     branches:
       - developer
 
