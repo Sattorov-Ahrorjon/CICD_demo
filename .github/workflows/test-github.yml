@@ -17,15 +17,10 @@ on:
         description: 'Is print file'
         required: true
         type: boolean
+  push:
+    paths:
+      - '**test-github**'
 
-
-  workflow_run:
-    workflows: [ Test yml file ]
-    types:
-      - completed
-      - requested
-    branches:
-      - developer
 
 jobs:
   job1:
