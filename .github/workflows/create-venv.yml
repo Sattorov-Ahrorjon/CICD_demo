@@ -6,15 +6,16 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
+#  release:
+#    branches:
+#      - master
+#      - developer
+#  push:
+#    branches: [master, developer]
+
 name: Upload Python Package
 
 on:
-  release:
-    branches:
-      - master
-      - developer
-  push:
-    branches: [master, developer]
   workflow_dispatch:
     inputs:
       logLevel:
