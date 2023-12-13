@@ -21,8 +21,7 @@ jobs:
       - name: Step1
         shell: python
         run: |
-          import os
-          print("Hello ", os.GITHUB_REPOSITORY_OWNER)
+          print("Salom dunyo!")
 
 #env:
 #  PASS: ${{ 6069 }}
