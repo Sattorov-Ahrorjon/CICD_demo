@@ -54,4 +54,11 @@ jobs:
 
       - name: Print action name
         run: echo "Hello ${{ github.event.action }}"
+        if: ${{ github.event_name == 'push' }}
+      - name: run shell
+        shell: python
+        run: |
+          print("Hello world")
+          from uuid import uuid4
+          print(f"UUID4 - {uuid4()}")
 
