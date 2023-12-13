@@ -13,10 +13,6 @@ on:
     branches:
       - master
       - developer
-#
-#  push:
-#    branches: [ master ]
-
   workflow_dispatch:
     inputs:
       logLevel:
