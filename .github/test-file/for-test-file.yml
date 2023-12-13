@@ -1,0 +1,32 @@
+
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - developer
+    path:
+      - '**for-test-file.yml'
+  pull-request:
+    - main
+    - master
+    - developer
+
+
+jobs:
+  job1:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10.12'
+
+      - name: Step 1
+        run: echo "The - $matrix.os"
+
