@@ -2,27 +2,11 @@ name: Test yml file
 
 
 on:
-#  workflow-dispatch:
-#    inputs:
-#      print-tags:
-#        description: Print-tags description
-#        required: true
-#        type: boolean
-#  release:
-#    branches:
-#      - master
-#      - developer
+  schedule:
+    - cron: '6 * * * *'
   push:
-#    branches:
-#      - developer
-#      - master
-#      - developer
     path:
       - '**for-test-file.yml'
-#  pull-request:
-#    - main
-#    - master
-#    - developer
 
 env:
   name: Diana
