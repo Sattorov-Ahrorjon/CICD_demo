@@ -4,6 +4,10 @@ name: On workflow for test github
 on:
   workflow_run:
     workflows: ["Test yml file"]
+    types:
+      - completed
+    branches:
+      - developer
 
 jobs:
   job1:

@@ -21,6 +21,10 @@ jobs:
 #        os: [ubuntu-latest]
 #    runs-on: ${{ matrix.os }}
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    inputs:
+      variable:
+
     if: ${{ github.event_name != 'push' }}
 
     steps:
