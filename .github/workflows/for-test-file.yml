@@ -51,5 +51,5 @@ jobs:
         run: echo "Hello ${{ github.event_name }}"
 
       - name: Print action
-        run: echo "Hello ${{ github.action }}"
+        run: echo "Hello ${{ github.event.action }}"
 
