@@ -8,7 +8,7 @@ name: Test yml file
 
 on:
   workflow_run:
-    workflows: ["Build", "On workflow"]
+    workflows: ["On workflow"]
     types: [requested, completed]
     branches:
       - "developer"
