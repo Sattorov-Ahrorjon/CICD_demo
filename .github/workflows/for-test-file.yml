@@ -1,11 +1,17 @@
 
 name: Test yml file
 
-on:
-  push:
-    paths:
-      - '**test-github.yml'
+#on:
+#  push:
+#    paths:
+#      - '**test-github.yml'
 
+on:
+  workflow_run:
+    workflows: ["Build", "On workflow"]
+    types: [requested, completed]
+    branches:
+      - "developer"
 
 env:
   name: Diana
