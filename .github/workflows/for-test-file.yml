@@ -1,17 +1,11 @@
 
 name: Test yml file
 
-#on:
-#  push:
-#    paths:
-#      - '**test-github.yml'
-
 on:
-  workflow_run:
-    workflows: ["On workflow"]
-    types: [requested, completed]
-    branches:
-      - "developer"
+  push:
+    paths:
+      - '**test-github.yml'
+
 
 env:
   name: Diana
@@ -52,15 +46,24 @@ jobs:
       - name: Print github object
         run: echo "GitHub - $github_obj"
 
-      - name: Run GITHUB_STEP_SUMMARY
-        run: echo "#### Hello github :rocket:" >> $GITHUB_STEP_SUMMARY
-
       - name: Echo path on python os
         shell: python
         run: |
           import os
           print("Print1 - ", os.environ['PATH'])
           print("Print2 - ", os.environ)
-          
+
+      - name: Set color
+        id: color-selected
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+
+      - name: Get Color
+        env:
+          SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+        run: echo "The selected color is $SELECTED_COLOR"
+
+
+      - name: Run GITHUB_STEP_SUMMARY
+        run: echo "#### Hello github :rocket:" >> $GITHUB_STEP_SUMMARY
 
 
