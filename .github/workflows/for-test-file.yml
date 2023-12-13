@@ -62,6 +62,6 @@ jobs:
           from uuid import uuid4
           print(f"UUID4 - {uuid4()}")
       - name: Run GITHUB_STEP_SUMMARY
-        run: echo "Hello github :rocked:" >> GITHUB_STEP_SUMMARY
+        run: echo "Hello github :rocked:" >> $GITHUB_STEP_SUMMARY
 
 
