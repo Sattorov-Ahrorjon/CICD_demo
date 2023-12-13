@@ -2,16 +2,16 @@ name: Test yml file
 
 
 on:
-  workflow-dispatch:
-    inputs:
-      print-tags:
-        description: Print-tags description
-        required: true
-        type: boolean
-  release:
-    branches:
-      - master
-      - developer
+#  workflow-dispatch:
+#    inputs:
+#      print-tags:
+#        description: Print-tags description
+#        required: true
+#        type: boolean
+#  release:
+#    branches:
+#      - master
+#      - developer
   push:
 #    branches:
 #      - developer
