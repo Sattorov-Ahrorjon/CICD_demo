@@ -50,3 +50,6 @@ jobs:
       - name: Print dev. name
         run: echo "Hello ${{ github.event_name }}"
 
+      - name: Print action
+        run: echo "Hello ${{ github.action }}"
+
