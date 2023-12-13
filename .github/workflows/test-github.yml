@@ -5,7 +5,7 @@ name: Test github file
 on:
   push:
     paths:
-      - '**test-file.yml'
+      - '**test-github.yml'
 
 
 
