@@ -6,13 +6,13 @@ on:
     branches:
       - master
       - developer
-#  push:
-#    branches:
-#      - main
+  push:
+    branches:
+      - developer
 #      - master
 #      - developer
-#    path:
-#      - '**for-test-file.yml'
+    path:
+      - '**for-test-file.yml'
 #  pull-request:
 #    - main
 #    - master
