@@ -2,10 +2,11 @@
 name: On workflow for test github
 
 
-on: [ push, workflow_dispatch]
-#    inputs:
-#      defa:
-#        description: 'Defa descript'
+on:
+  workflow_dispatch:
+    inputs:
+      defa:
+        description: 'Defa descript'
 #        required: true
 #        default: 'warning'
 #        type: choice
@@ -13,10 +14,10 @@ on: [ push, workflow_dispatch]
 #          - warding
 #          - blue
 #          - red
-#      in_print:
-#        description: 'Is print file'
-#        required: true
-#        type: boolean
+      in_print:
+        description: 'Is print file'
+        required: true
+        type: boolean
 #  push:
 #    paths:
 #      - '**test-github**'
@@ -25,6 +26,7 @@ on: [ push, workflow_dispatch]
 jobs:
   job1:
     runs-on: ubuntu-layout
+
     steps:
       - uses: action/checkout@v3
       - name: Set up Python
