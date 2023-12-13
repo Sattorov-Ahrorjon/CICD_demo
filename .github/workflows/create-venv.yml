@@ -12,6 +12,7 @@ on:
   release:
     branches:
       - master
+      - developer
 #
 #  push:
 #    branches: [ master ]
