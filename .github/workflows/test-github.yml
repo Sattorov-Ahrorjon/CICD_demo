@@ -3,28 +3,9 @@ name: On workflow for test github
 
 
 on:
-  workflow_run:
-    workflows:
-      - Test yml file
-#  workflow_call:
-  workflow_dispatch:
-    inputs:
-      defa:
-        description: 'Defa descript'
-#        required: true
-#        default: 'warning'
-#        type: choice
-#        options:
-#          - warding
-#          - blue
-#          - red
-      in_print:
-        description: 'Is print file'
-        required: true
-        type: boolean
-#  push:
-#    paths:
-#      - '**test-github**'
+  push:
+    paths:
+      - '**test-github**'
 
 
 jobs:
