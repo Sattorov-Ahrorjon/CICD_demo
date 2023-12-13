@@ -3,8 +3,7 @@ name: On workflow for test github
 
 on:
   workflow_run:
-    workflows:
-      - Test yml file
+    workflows: ["Test yml file"]
   push:
     branches:
       - master
