@@ -29,6 +29,8 @@ jobs:
           print("Salom dunyo!")
           import os
           print("Print environ path - ", os.environ['PATH'])
+      - name: GitHub Sha
+        run: echo "${{ github.sha }}"
 
 #env:
 #  PASS: ${{ 6069 }}
