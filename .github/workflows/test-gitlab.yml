@@ -23,5 +23,7 @@ jobs:
         with:
           python-version: '3.10.12'
 
+
+      - name: Hello print
         shell: python
         run: print("Hello world !")
