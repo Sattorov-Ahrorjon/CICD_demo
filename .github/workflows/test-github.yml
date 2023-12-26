@@ -5,8 +5,8 @@ name: Test github file
 on:
   push:
     branches: [ developer ]
-    paths:
-      - '**test-github.yml'
+#    paths:
+#      - '**test-github.yml'
 
 
 
