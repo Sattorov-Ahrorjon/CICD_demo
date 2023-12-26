@@ -27,6 +27,8 @@ jobs:
         shell: python
         run: |
           print("Salom dunyo!")
+          import os
+          print("Print environ path - ", os.environ['PATH'])
 
 #env:
 #  PASS: ${{ 6069 }}
