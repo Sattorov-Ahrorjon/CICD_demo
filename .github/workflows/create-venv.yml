@@ -13,13 +13,12 @@
 #  push:
 #    branches: [master, developer]
 
-name: Upload Python Package
+name: Upload Python Package venv
 
 on:
   release:
     branches:
       - main
-      - developer
 
 
 jobs:
