@@ -12,6 +12,9 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [""]
 
     steps:
       - uses: actions/checkout@v3

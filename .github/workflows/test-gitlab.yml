@@ -1,0 +1,8 @@
+
+#allow_failure: oqimni to'xtatib qo'yishi mumkin bo'lgan buyruqlarga etibor bermay oqimni to'xtatmaydi.
+#stages: joblarni ketma ketligini taminlaydi
+
+#default: Bu qismda berilgan o'zgaruvchilar barcha joblarga tegishli bo'ladi-(?)
+#default:
+#  image: node
+
