@@ -1,6 +1,6 @@
 name: Test yml file
 
-run-name: "### Job3 Done! :rocket: ${{ GITHUB_STEP_SUMMARY }}"
+run-name: "${{ github.event_name }}"
 
 on:
   push:
