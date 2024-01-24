@@ -11,7 +11,9 @@ name: The gitlab file
 
 on:
   push:
-    branches: [ gitlab_branch ]
+#    branches: [ gitlab_branch ]
+    paths:
+      - "**test-gitlab.yml"
 
 jobs:
   job1:
