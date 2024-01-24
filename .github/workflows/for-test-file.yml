@@ -1,6 +1,6 @@
 name: Test yml file
 
-run-name: "${{ github.actor }}"
+run-name: "${{ github.actor }} ${{ github.event_name }}  ${{ github.event }}"
 
 
 env:
