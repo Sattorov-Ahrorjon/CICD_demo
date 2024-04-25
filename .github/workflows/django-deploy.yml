@@ -2,6 +2,10 @@ name: Django Deploy CD
 on:
   push:
     branches: [ main ]
+
+env:
+  status: update
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,12 +20,15 @@ jobs:
           password: ${{ secrets.SERVER_USER_PASSWORD }}
           port: ${{ secrets.DEPLOY_PORT }}
           script: |
-            cd ${{ secrets.PROJECT_PATH }}
-            echo "Hello"
-            echo "${{ github.event_name }}"
-            echo "${{ github.ref_name }}"
-            echo "${{ github.repository_name }}"
+            cd Development            
             git pull ${{secrets.REPO_URL}}
+            cd ${{ github.event.repository.name }}
+#            python3 -m venv venv
+            source venv/bin/activate
+            pip freeze
+#            pip install -r requirements.txt
+
+            
 
 #            docker-compose down
 #            docker-compose up --build -d
