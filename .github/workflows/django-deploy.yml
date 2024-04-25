@@ -27,7 +27,7 @@ jobs:
             cd ${{ github.event.repository.name }}
             ls
 
-            docker-compose up -d
+            docker compose up -d
 
   update-repo:
     runs-on: ubuntu-latest
@@ -47,4 +47,4 @@ jobs:
             
             docker compose down
             docker rmi develop_image
-            docker-compose up -d
+            docker compose up -d
