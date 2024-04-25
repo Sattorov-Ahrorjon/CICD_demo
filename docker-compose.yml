@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  develop:
+    image: develop_image
+    build: .
+    command: bash -c "python manage.py runserver 0.0.0.0:8002"
+    container_name: development
+    volumes:
+      - .:/development
+    ports:
+      - "8002:8002"

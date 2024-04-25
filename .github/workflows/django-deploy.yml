@@ -24,10 +24,8 @@ jobs:
             cd Development            
             git clone ${{secrets.REPO_URL}} -b main
             cd ${{ github.event.repository.name }}
-            python3 -m venv venv
-            source venv/bin/activate
-            pip install -r requirements.txt
-            python manage.py runserver 0.0.0.0:8002
+
+            docker-compose up -d
 
   update-repo:
     runs-on: ubuntu-latest
@@ -41,9 +39,10 @@ jobs:
           password: ${{ secrets.SERVER_USER_PASSWORD }}
           port: ${{ secrets.DEPLOY_PORT }}
           script: |
-            cd Development            
-            git pull ${{secrets.REPO_URL}}
+            cd Development
             cd ${{ github.event.repository.name }}
-            source venv/bin/activate
-            pip install -r requirements.txt
-            python manage.py runserver 0.0.0.0:8002
+            git pull
+            
+            docker compose down
+            docker rmi develop_image
+            docker-compose up -d
