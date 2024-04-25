@@ -30,7 +30,7 @@ jobs:
 
   update-repo:
     runs-on: ubuntu-latest
-    if: ${{ !env.ACT }} && ${{ env.status == 'update' }}
+    if: ${{ env.status == 'update' }}
     steps:
       - name: Repository update
         uses: appleboy/ssh-action@master
