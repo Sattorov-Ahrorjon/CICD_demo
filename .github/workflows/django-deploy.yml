@@ -9,7 +9,7 @@ env:
 jobs:
   create-repo:
     # don't run locally
-    if: ${{ !env.ACT }} && ${{ env.status == 'create' }}
+    if: ${{ env.status == 'create' }}
     runs-on: ubuntu-latest
     steps:
       - name: Create a repository
