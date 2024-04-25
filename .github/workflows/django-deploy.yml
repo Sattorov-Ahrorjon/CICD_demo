@@ -25,6 +25,7 @@ jobs:
             cd Development            
             git clone ${{secrets.REPO_URL}} -b main
             cd ${{ github.event.repository.name }}
+            ls
 
             docker-compose up -d
 
