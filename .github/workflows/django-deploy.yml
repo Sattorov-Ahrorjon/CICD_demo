@@ -5,7 +5,7 @@ on:
 
 
 env:
-  status: update
+  status: create
 
 jobs:
   create-repo:
