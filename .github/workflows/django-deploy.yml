@@ -12,7 +12,24 @@ jobs:
     steps:
       - name: Deploy to server
         # don't run locally
-        if: ${{ !env.ACT }}
+        if: ${{ !env.ACT }} && ${{ env.status == 'create' }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.LIVE_SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_USER_PASSWORD }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          script: |
+            cd Development            
+            git clone ${{secrets.REPO_URL}} -b main
+            cd ${{ github.event.repository.name }}
+            python3 -m venv venv
+            source venv/bin/activate
+            pip install -r requirements.txt
+            ./manage.py runserver 0.0.0.0:8002
+
+      - name: Update server code
+        if: ${{ !env.ACT }} && ${{ env.status == 'update' }}
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.LIVE_SERVER_IP }}
@@ -24,8 +41,5 @@ jobs:
             git pull ${{secrets.REPO_URL}}
             cd ${{ github.event.repository.name }}
             source venv/bin/activate
-            pip freeze
-#            pip install -r requirements.txt
-
-#            docker-compose down
-#            docker-compose up --build -d
+            pip install -r requirements.txt
+            ./manage.py runserver 0.0.0.0:8002
