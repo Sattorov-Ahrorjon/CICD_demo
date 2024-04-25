@@ -23,12 +23,9 @@ jobs:
             cd Development            
             git pull ${{secrets.REPO_URL}}
             cd ${{ github.event.repository.name }}
-#            python3 -m venv venv
             source venv/bin/activate
             pip freeze
 #            pip install -r requirements.txt
-
-            
 
 #            docker-compose down
 #            docker-compose up --build -d
