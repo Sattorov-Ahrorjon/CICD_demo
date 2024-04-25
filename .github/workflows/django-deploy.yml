@@ -17,6 +17,7 @@ jobs:
           port: ${{ secrets.DEPLOY_PORT }}
           script: |
             cd ${{ secrets.PROJECT_PATH }}
+            echo "Hello"
             git pull ${{secrets.REPO_URL}}
             ll
 #            docker-compose down
