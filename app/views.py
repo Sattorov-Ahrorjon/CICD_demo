@@ -4,7 +4,8 @@ from django.http import HttpResponse
 
 def main_page(request):
     content = ''' <center><h1> Hello World </h1> \n'''
-    content += ''' <center><h2> I am Online Server </h2> '''
+    content += ''' <center><h2> I am not Online Server </h2> '''
+    content += ''' <center><h2> I am Backend developer </h2> '''
     return HttpResponse(content)
 
 
