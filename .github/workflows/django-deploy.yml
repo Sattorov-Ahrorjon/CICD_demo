@@ -18,7 +18,10 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             echo "Hello"
-            git clone ${{secrets.REPO_URL}}
-            ll
+            echo "${{ github.event_name }}"
+            echo "${{ github.ref_name }}"
+            echo "${{ github.repository }}"
+            git pull ${{secrets.REPO_URL}}
+
 #            docker-compose down
 #            docker-compose up --build -d
