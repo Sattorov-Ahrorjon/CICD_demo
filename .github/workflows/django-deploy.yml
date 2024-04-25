@@ -4,15 +4,15 @@ on:
     branches: [ main ]
 
 env:
-  status: update
+  status: create
 
 jobs:
-  deploy:
+  create-repo:
+    # don't run locally
+    if: ${{ !env.ACT }} && ${{ env.status == 'create' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to server
-        # don't run locally
-        if: ${{ !env.ACT }} && ${{ env.status == 'create' }}
+      - name: Create a repository
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.LIVE_SERVER_IP }}
@@ -28,8 +28,11 @@ jobs:
             pip install -r requirements.txt
             python manage.py runserver 0.0.0.0:8002
 
-      - name: Update server code
-        if: ${{ !env.ACT }} && ${{ env.status == 'update' }}
+  update-repo:
+    if: ${{ !env.ACT }} && ${{ env.status == 'update' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository update
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.LIVE_SERVER_IP }}
