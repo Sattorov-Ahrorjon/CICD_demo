@@ -8,9 +8,9 @@ env:
 
 jobs:
   create-repo:
+    runs-on: ubuntu-latest
     # don't run locally
     if: ${{ env.status == 'create' }}
-    runs-on: ubuntu-latest
     steps:
       - name: Create a repository
         uses: appleboy/ssh-action@master
@@ -29,8 +29,8 @@ jobs:
             python manage.py runserver 0.0.0.0:8002
 
   update-repo:
-    if: ${{ !env.ACT }} && ${{ env.status == 'update' }}
     runs-on: ubuntu-latest
+    if: ${{ !env.ACT }} && ${{ env.status == 'update' }}
     steps:
       - name: Repository update
         uses: appleboy/ssh-action@master
